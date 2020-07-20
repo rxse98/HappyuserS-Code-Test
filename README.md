@@ -1,3 +1,5 @@
+https://youtu.be/FJhRTSM14K0
+
 use ECSY library from https://ecsy.io/
 
 each mouse click generates ~40 particles of different shape (mixed circles and boxes), size, velocity
