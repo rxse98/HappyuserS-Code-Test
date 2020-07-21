@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -158,9 +156,9 @@ class RendererSystem extends System {
   }
 }
 
-function timeOut() {
-  shapes.splice(0, NUM_ELEMENTS);
-}
+// function timeOut() {
+//   shapes.splice(0, NUM_ELEMENTS);
+// }
 
 // Define a query of entities that have "Renderable" and "Shape" components
 RendererSystem.queries = {
@@ -213,8 +211,18 @@ document.addEventListener("click", function(e) {
 
   
   randtimer = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;
-  setTimeout(timeOut, randtimer);
 
+
+  setTimeout(() => {
+    var timer = window.setInterval(function () {
+      if (shapes.length > 0) {
+        shapes.shift();
+        console.log(shapes);
+      }
+      else
+          window.clearInterval(timer);
+    }, 25);
+  }, randtimer);
 });
 
       
